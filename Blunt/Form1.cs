@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Blunt.Resources;
 
 namespace Blunt
 {
@@ -31,7 +32,9 @@ namespace Blunt
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CloneRepo repo = new CloneRepo();
 
+            repo.Clone("git clone someResource");
         }
 
         private void newResource_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace Blunt
 {
     public partial class Form1 : Form
     {
+        string selectedPath;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,9 @@ namespace Blunt
 
             if (FBD.ShowDialog() == DialogResult.OK)
             {
-                label1.Text = FBD.SelectedPath;
+                selectedPath = FBD.SelectedPath;
+
+                label1.Text = selectedPath;
             }
         }
 
@@ -50,8 +53,7 @@ namespace Blunt
 
             // this will eventually clone a repo to the selected directory
             CloneRepo repo = new CloneRepo();
-            repo.Clone("typescript");
-
+            repo.Clone(selectedPath ,"https://github.com/itschip/cfa-templates.git");
         }
 
         private void closeModal_Click(object sender, EventArgs e)

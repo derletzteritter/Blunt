@@ -54,6 +54,8 @@ namespace Blunt
             // this will eventually clone a repo to the selected directory
             CloneRepo repo = new CloneRepo();
             repo.Clone(selectedPath ,"https://github.com/itschip/cfa-templates.git");
+
+            resourcePanel.Hide();
         }
 
         private void closeModal_Click(object sender, EventArgs e)
